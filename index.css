@@ -5,7 +5,6 @@ h1{
 }
 form{
     text-align: left;
-    font-family: 'Bree Serif', serif;
 }
 body{
     background-image: url('http://www.powerpointhintergrund.com/uploads/2017/09/wallpaper-best-dr-seuss-background-wallpaper-download-html-de--23.jpeg')
@@ -25,3 +24,27 @@ div{
 ul:nth-of-type(even) {
     background-color: aquamarine;
   }
+input[type='text'] {
+    border: 2px solid white;
+    background-color: skyblue;
+    color: black;
+}
+label{
+    font-family: 'Bree Serif', serif;
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+.button:hover {
+    background-color: white; /* Green */
+    color: green;
+}
