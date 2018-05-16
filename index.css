@@ -1,14 +1,27 @@
-.places{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 h1{
     text-align: center;
+    font-family: 'Indie Flower', cursive;
 }
 form{
-    text-align: center;
+    text-align: left;
+    font-family: 'Bree Serif', serif;
 }
 body{
     background-image: url('http://www.powerpointhintergrund.com/uploads/2017/09/wallpaper-best-dr-seuss-background-wallpaper-download-html-de--23.jpeg')
 }
+main {
+    display: flex;
+    justify-content: center;
+  }
+li{
+    list-style: none;
+    margin-top: 1rem;
+}
+div{
+    text-align: center;
+    font-size: 24px;
+}
+ul:nth-of-type(even) {
+    background-color: aquamarine;
+  }
