@@ -14,14 +14,13 @@ function handleSubmit(ev){
         'continent': continent,
     }
     const collections = document.querySelector('#collections')
-    const list = document.createElement('ul')
-    list.appendChild(renderList(collects,collections))
-    collections.appendChild(list)
+    
+    collections.appendChild(renderList(collects,collections))
     a.reset()
     a.country.focus()
 }
 function renderList(data,collections){
-    
+    const list = document.createElement('ul')
     const keys = Object.keys(data)
     const item = document.createElement('li')
     keys.forEach(label => {
@@ -30,12 +29,13 @@ function renderList(data,collections){
     const button = document.createElement('button')
     buttonStyle(button)
     item.appendChild(button)
-  //  button.addEventListener('click',Delete(this,collections))
-    return item
+    list.appendChild(item)
+    button.addEventListener('click', collections =>{
+    list.removeChild(item)})
+    return list
 }
-//function Delete(item,collections){
-  //  collections.removeChild(item.innerHTML)
-//}
+
+
 function buttonStyle(button){
     button.textContent = 'Delete'
     button.style.color = 'teal'
