@@ -13,6 +13,7 @@ function handleSubmit(ev){
         'country': country,
         'continent': continent,
     }
+    console.log(continent)
     const collections = document.querySelector('#collections')
     collections.appendChild(renderList(collects,collectCountry,collectContinent))
     a.reset()
@@ -33,6 +34,7 @@ function renderList(data,country,continent){
     list.removeChild(item)
     country.splice(country.indexOf(data[keys[0]]),1)
     continent.splice(continent.indexOf(data[keys[1]]),1)
+    console.log(continent)
 })
     return list
 }
@@ -40,7 +42,6 @@ function renderList(data,country,continent){
 
 function buttonStyle(button){
     button.textContent = 'Delete'
-    //button.style.color = 'teal'
     button.style.width = '3rem'
     button.style.height = '2rem'
     button.style.float = 'right'
