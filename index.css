@@ -21,14 +21,13 @@ main {
 li{
     list-style: none;
     margin-top: 1rem;
+    display: inline-block;
 }
 div{
     text-align: center;
     font-size: 24px;
 }
-ul:nth-of-type(even) {
-    background-color: aquamarine;
-  }
+
 input[type='text'] {
     border: 2px solid white;
     background-color: orange;

@@ -39,6 +39,8 @@ function renderList(data,collections){
 function buttonStyle(button){
     button.textContent = 'Delete'
     button.style.color = 'teal'
+    button.style.width = '3rem'
+    button.style.height = '2rem'
 }
 form.addEventListener('submit',handleSubmit)
 
