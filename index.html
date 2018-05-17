@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Oh The Places You Will Go Next</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js">
     <link rel="stylesheet"  href="index.css" /> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -13,21 +14,26 @@
     <img src="https://www.gfxmag.com/wp-content/uploads/2017/01/airplane-arriving-emoji-vector-icon.png" alt="airplane" class='airplane'>
     <main>
     <img src="https://ih0.redbubble.net/image.237137431.0566/flat,800x800,075,f.u4.jpg" alt="Oh the places you will go" width="100px" height="100px" class='places'>
-    <form>
+    <form id='form'>
         <p>
         <label for="country">Country</label>
-        <input type="text" name='country'><br>
-        </p>
-        <p>
-        <label for="continent">Continent</label>
-        <input type="text" name='continent'><br>
+        <input type="text" name='country' autofocus><br>
         </p>
         <button type="submit" class='button'>Ready to Go</button>
     </form>
     </main>>
-    <script src="index.js"></script> 
-    <div id="collections">
-
-    </div>
+    
+        <ul id='countries' class='no-bullet'>
+            <li class='template flick grid-x align-middle'>
+                <span class='flickName cell auto'></span>
+                <span class='actions cell shrink'>
+                    <button class='small button-group'>
+                        <a class='button warning'>Favorite</a>
+                        <a class='button alert'>Delete</a>
+                    </button>
+                </span>
+            </li>
+        </ul>
+        <script src="index.js"></script> 
 </body>
 </html>

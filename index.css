@@ -99,3 +99,7 @@ ul {
         transform: translate(1500px, 20px);
   }
   }
+  
+  .template{
+    display: none;
+  }
