@@ -40,9 +40,11 @@ function renderList(data,country,continent){
 
 function buttonStyle(button){
     button.textContent = 'Delete'
-    button.style.color = 'teal'
+    //button.style.color = 'teal'
     button.style.width = '3rem'
     button.style.height = '2rem'
+    button.style.float = 'right'
+    button.setAttribute('class','deleteButton')
 }
 form.addEventListener('submit',handleSubmit)
 
