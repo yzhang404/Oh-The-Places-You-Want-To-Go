@@ -84,3 +84,18 @@ ul {
     background-color: teal; 
     color: orange;
 }
+
+  .airplane{
+    height: 100px;
+    width: 100px;
+    animation: airplanemove 10s ease-in-out infinite;
+  }
+  
+  @keyframes airplanemove{
+    0%{
+        transform: translate(0px);
+  }
+    100%{
+        transform: translate(1500px, 20px);
+  }
+  }
