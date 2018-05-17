@@ -14,12 +14,11 @@ function handleSubmit(ev){
         'continent': continent,
     }
     const collections = document.querySelector('#collections')
-    
-    collections.appendChild(renderList(collects,collections))
+    collections.appendChild(renderList(collects,collectCountry,collectContinent))
     a.reset()
     a.country.focus()
 }
-function renderList(data,collections){
+function renderList(data,country,continent){
     const list = document.createElement('ul')
     const keys = Object.keys(data)
     const item = document.createElement('li')
@@ -31,7 +30,10 @@ function renderList(data,collections){
     item.appendChild(button)
     list.appendChild(item)
     button.addEventListener('click', collections =>{
-    list.removeChild(item)})
+    list.removeChild(item)
+    country.splice(country.indexOf(data[keys[0]]),1)
+    continent.splice(continent.indexOf(data[keys[1]]),1)
+})
     return list
 }
 
