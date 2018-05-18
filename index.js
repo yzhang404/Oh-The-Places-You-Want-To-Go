@@ -32,6 +32,10 @@ const app={
         item
         .querySelector('a#up')
         .addEventListener('click',this.upItem.bind(this,countrycollect))
+
+        item
+        .querySelector('a#down')
+        .addEventListener('click',this.downItem.bind(this,countrycollect))
         return item
     },
     handleSubmit(ev){
@@ -84,8 +88,18 @@ const app={
             alert('It is the top one already!!!!!!!!')
         }
     },
-    downItem(){
-
+    downItem(countrycollect,ev){
+        const currentItem1 = document.querySelector(`[data-id = "${countrycollect.id}"]`)
+        const valueItem1 = currentItem1.querySelector('.flickName').textContent
+        const index3 = this.countries.indexOf(valueItem1)
+        if (index3 < this.countries.length-1 ){
+            this.list.insertBefore(currentItem1.nextElementSibling,currentItem1)
+            const temp = this.countries[index3+1]
+            this.countries[index3+1] = this.countries[index3]
+            this.countries[index3] = temp
+        } else{
+            alert('It is the bottom one already!!!!!!!!')
+        }
     },
 
 }
