@@ -105,4 +105,7 @@ ul {
       float: right;
       margin-top:0;
       background-color: none;
+      border-color: none;
+      border-style: none;
+      border-width:0;
 }

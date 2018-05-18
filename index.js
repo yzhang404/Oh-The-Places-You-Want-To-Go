@@ -54,12 +54,12 @@ const app={
     favItem(countrycollect,ev){
         const favbtn = ev.target
         const li = favbtn.closest('.flick')
-        if (favbtn.textContent=='Favorite'){
+        if (favbtn.textContent=='Fav'){
             li.style.background = 'yellow'
-            favbtn.textContent = 'Unfavorite'
+            favbtn.textContent = 'Unfav'
         } else{
             li.style.background = 'teal'
-            favbtn.textContent = 'Favorite'
+            favbtn.textContent = 'Fav'
         }
         
     },
