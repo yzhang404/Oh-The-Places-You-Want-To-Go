@@ -99,7 +99,7 @@ ul {
 .template{
     display: none;
 }
-.actions{ 
+button.tiny{ 
       display: block; 
       text-align: right; 
       float: right;

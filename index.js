@@ -27,6 +27,10 @@ const app={
         item
         .querySelector('a#fav')
         .addEventListener('click', this.favItem.bind(this, countrycollect))
+
+        item
+        .querySelector('a#up')
+        .addEventListener('click',this.upItem.bind(this,countrycollect,item.dataset.id))
         return item
     },
     handleSubmit(ev){
@@ -57,11 +61,20 @@ const app={
         if (favbtn.textContent=='Fav'){
             li.style.background = 'yellow'
             favbtn.textContent = 'Unfav'
+            countrycollect.fav = true
         } else{
             li.style.background = 'teal'
             favbtn.textContent = 'Fav'
+            countrycollect.fav = false
         }
+        console.log(countrycollect.fav)
         
+    },
+    upItem(){
+
+    },
+    downItem(){
+
     },
 
 }
