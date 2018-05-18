@@ -1,48 +1,48 @@
-const form = document.querySelector('form')
 
-function handleSubmit(ev){
-    ev.preventDefault();
-    const collectCountry = []
-    const template = document.querySelector('.template')
-    const a = ev.target
-    const country = a.country.value
-    collectCountry.push(country)
-    const collects = {
-        'country': country,
-    }
-    document.querySelector('#countries').appendChild(renderList(collects,collectCountry,template))
-    a.reset()
-    a.country.focus()
+const app={
+    init(selectors){
+        this.countries=[]
+        this.max=0
+        this.list=document.querySelector(selectors.listSelector)
+        this.template = document.querySelector(selectors.templateSelector)
+        document
+        .querySelector(selectors.formSelector)
+        .addEventListener('submit', (ev)=>{
+            
+            ev.preventDefault()
+            this.handleSubmit(ev)
+        })
+    },
+    renderList(countrycollect){
+        const item = this.template.cloneNode(true)
+        item.classList.remove('template')
+        //item.dataset.id = countrycollect.id
+        //const keys = countrycollect.keys()
+        item.querySelector('.flickName').textContent = countrycollect.countryName
+        return item
+    },
+    handleSubmit(ev){
+        const f = ev.target
+        const countrycollect = {
+            id: ++this.max,
+            countryName: f.country.value,
+        }
+        this.countries.unshift(countrycollect.countryName)
+        const item = this.renderList(countrycollect)
+        this.list.insertBefore(item,this.list.firstChild)
+        f.reset()
+    },
+    
+    removeItem(){
+        const countrycollection = {
+            countryName: document.querySelector('#form').country.value,
+        }
+        this.list.removeChild(this.renderList(countrycollection),1)
+    },
+
 }
-function renderList(data,country,template){
-    const item =  template.cloneNode(true)
-    item.classList.remove('template')
-    item.querySelector('.flickName').textContent = data['country']
-    console.log(item)
-    return item
-}
-    //const button = document.createElement('button')
-    //buttonStyle(button)
-    //item.appendChild(button)
-    //list.appendChild(item)
-    /*
-    const button = document.querySelector('.button.alert')
-    button.addEventListener('click', collections =>{
-    list.removeChild(item)
-    country.splice(country.indexOf(data[keys[0]]),1)
-    continent.splice(continent.indexOf(data[keys[1]]),1)
+app.init({
+    formSelector: '#form',
+    listSelector: '#countries',
+    templateSelector:'.template',
 })
-    list.insertBefore(item,list.firstChild)
-    return list
-}
-
-/*
-function buttonStyle(button){
-    button.textContent = 'Delete'
-    button.style.width = '3rem'
-    button.style.height = '2rem'
-    button.style.float = 'right'
-    button.setAttribute('class','deleteButton')
-}
-*/
-form.addEventListener('submit',handleSubmit)

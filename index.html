@@ -24,12 +24,12 @@
     </main>>
     
         <ul id='countries' class='no-bullet'>
-            <li class='template flick grid-x align-middle'>
+            <li id='list' class='template flick grid-x align-middle'>
                 <span class='flickName cell auto'></span>
                 <span class='actions cell shrink'>
                     <button class='small button-group'>
                         <a class='button warning'>Favorite</a>
-                        <a class='button alert'>Delete</a>
+                        <a id='deleteB' class='button alert' onclick='app.removeItem()')}>Delete</a>
                     </button>
                 </span>
             </li>
