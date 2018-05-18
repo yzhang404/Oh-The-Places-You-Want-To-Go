@@ -24,6 +24,9 @@ const app={
         .querySelector('a#deleteB')
         .addEventListener('click', this.removeItem.bind(this, countrycollect)
       )
+        item
+        .querySelector('a#fav')
+        .addEventListener('click', this.favItem.bind(this, countrycollect))
         return item
     },
     handleSubmit(ev){
@@ -47,6 +50,18 @@ const app={
         const index = this.countries.indexOf(countrycollect)
         this.countries.splice(index, 1)
 
+    },
+    favItem(countrycollect,ev){
+        const favbtn = ev.target
+        const li = favbtn.closest('.flick')
+        if (favbtn.textContent=='Favorite'){
+            li.style.background = 'yellow'
+            favbtn.textContent = 'Unfavorite'
+        } else{
+            li.style.background = 'teal'
+            favbtn.textContent = 'Favorite'
+        }
+        
     },
 
 }

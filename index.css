@@ -19,9 +19,7 @@ main {
     justify-content: center;
   }
 li{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-top: -1px; /* Prevent double borders */
+   
     background-color: teal;
     padding: 12px;
     text-decoration: none;
@@ -31,9 +29,7 @@ li{
     position: relative;
     height: 28px;
 }
-ul li:hover {
-    background-color: rgb(84, 180, 218);
-}
+
 div{
     text-align: center;
     font-size: 24px;
@@ -103,7 +99,10 @@ ul {
 .template{
     display: none;
 }
-a { 
+.actions{ 
       display: block; 
       text-align: right; 
+      float: right;
+      margin-top:0;
+      background-color: none;
 }
