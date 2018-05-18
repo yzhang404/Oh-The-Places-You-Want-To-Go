@@ -2,6 +2,7 @@
 const app={
     init(selectors){
         this.countries=[]
+        console.log(countries)
         this.max=0
         this.list=document.querySelector(selectors.listSelector)
         this.template = document.querySelector(selectors.templateSelector)
@@ -30,7 +31,7 @@ const app={
 
         item
         .querySelector('a#up')
-        .addEventListener('click',this.upItem.bind(this,countrycollect,item.dataset.id))
+        .addEventListener('click',this.upItem.bind(this,countrycollect))
         return item
     },
     handleSubmit(ev){
@@ -51,8 +52,8 @@ const app={
         const it = btn.closest('.flick')
 
         it.remove()
-        const index = this.countries.indexOf(countrycollect)
-        this.countries.splice(index, 1)
+        const index1 = this.countries.indexOf(countrycollect)
+        this.countries.splice(index1, 1)
 
     },
     favItem(countrycollect,ev){
@@ -70,8 +71,18 @@ const app={
         console.log(countrycollect.fav)
         
     },
-    upItem(){
-
+    upItem(countrycollect,ev){
+        const currentItem = document.querySelector(`[data-id = "${countrycollect.id}"]`)
+        const valueItem = currentItem.querySelector('.flickName').textContent
+        const index2 = this.countries.indexOf(valueItem)
+        if (index2 > 0 ){
+            this.list.insertBefore(currentItem,currentItem.previousElementSibling)
+            const temp = this.countries[index2-1]
+            this.countries[index2-1] = this.countries[index2]
+            this.countries[index2] = temp
+        } else{
+            alert('It is the top one already!!!!!!!!')
+        }
     },
     downItem(){
 
