@@ -36,6 +36,10 @@ const app={
         item
         .querySelector('a#down')
         .addEventListener('click',this.downItem.bind(this,countrycollect))
+
+        item
+        .querySelector('a#edit')
+        .addEventListener('click',this.editContent.bind(this,countrycollect,item))
         return item
     },
     handleSubmit(ev){
@@ -101,6 +105,18 @@ const app={
             alert('It is the bottom one already!!!!!!!!')
         }
     },
+    editContent(countrycollect,item,ev){
+        const name = item.querySelector('.flickName')
+        const button = item.querySelector('a#edit')
+        if(!name.isContentEditable){
+            name.contentEditable = true
+            countrycollect.countryName = name.textContent
+        } else{
+            name.contentEditable = false
+        }
+
+
+    }
 
 }
 app.init({
