@@ -19,8 +19,9 @@ class App{
         item.classList.remove('template')
         item.dataset.id = countrycollect.id
         console.log(item.dataset.id)
+        const nameSpan = item.querySelector('.flickName')
         item.querySelector('.flickName').textContent = countrycollect.countryName
-
+        nameSpan.addEventListener('keypress',this.saveOnEnter.bind(this,item,countrycollect))
         item
         .querySelector('a#deleteB')
         .addEventListener('click', this.removeItem.bind(this, countrycollect)
@@ -42,6 +43,12 @@ class App{
         .addEventListener('click',this.editContent.bind(this,countrycollect,item))
         return item
     }
+    saveOnEnter(item,countrycollect,ev){
+        if(ev.key === 'Enter'){
+            this.editContent(countrycollect,item,ev)
+        }
+    }
+
     handleSubmit(ev){
         const f = ev.target
         const countrycollect = {
@@ -113,8 +120,13 @@ class App{
         if(!name.isContentEditable){
             name.contentEditable = true
             countrycollect.countryName = name.textContent
+            button.textContent='save'
+            button.classList.add('success')
+            name.focus()
         } else{
             name.contentEditable = false
+            button.textContent = 'edit'
+            button.classList.remove('success')
         }
 
 
