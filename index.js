@@ -67,6 +67,8 @@ class App{
     favItem(countrycollect,ev){
         const favbtn = ev.target
         const li = favbtn.closest('.flick')
+        // toggle!
+        // countrycollect.fav = item.classList.toggle('fav')
         if (favbtn.textContent=='Fav'){
             li.style.background = 'yellow'
             favbtn.textContent = 'Unfav'
